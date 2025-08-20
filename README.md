@@ -6,8 +6,8 @@ Psychological Testing and Emotion Analysis
 Computers played a significant role in science fiction for example the television series "UFO" (1970-1971). In that series, SHADO (Supreme Headquarters Alien Defence Organisation) was portrayed as having advanced technology, including sophisticated computer systems, with a notable example being SID (Space Intruder Detector), an unmanned computerized satellite used for early detection of UFO incursions, while both SHADO control and Moonbase were equipped with numerous computer consoles; one episode, *Computer Affair*, focused specifically on the role of computers in psychological testing, exploring their potential to analyze human emotions and relationships and showing how Straker and others relied on computer data to make critical decisions.
 
 # TEC-1 MINT and Psychological Testing and Emotion Analysis
-# Enhanced Emotion Analysis in MINT
-## A Complete Psychological Testing System for the SJ MINT Interpreter
+
+## A Complete Psychological Testing System using MINT Interpreter
 
 ---
 
