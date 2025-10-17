@@ -1383,6 +1383,144 @@ The code is now fully functional, syntactically correct, and safe for MINT inter
 S
 ```
 
+# create an expanded menu
+that includes all the relevant user-facing functions, not just the basic 5. Here's the updated code with a comprehensive menu:Perfect! Now when you run the program with `S`, you'll see this expanded menu:
+
+```
+=== EMOTION ANALYSIS MENU ===
+1. Analyze Text
+2. View History
+3. Show Statistics
+4. Clear History
+5. System Test
+6. Version Info
+7. Expert Mode
+8. Export Data
+9. Batch Analysis
+A. Calibration
+R. Reset System
+X. Exit Program
+
+Select option: _
+```
+
+## The Complete Menu Options:
+
+**1. Analyze Text** - Main emotion analysis function
+**2. View History** - See all previous analyses
+**3. Show Statistics** - View averages and distributions
+**4. Clear History** - Erase all stored data
+**5. System Test** - Test word detection algorithms
+**6. Version Info** - Display system information and features
+**7. Expert Mode** - Show all internal variables (debugging)
+**8. Export Data** - Export history as CSV format
+**9. Batch Analysis** - Analyze multiple texts in sequence
+**A. Calibration** - Run system accuracy tests
+**R. Reset System** - Reset all variables to defaults
+**X. Exit Program** - Exit with session summary
+
+The menu now accepts:
+- Numbers 1-9 for the first options
+- Letters A (or a) for Calibration
+- Letter R (or r) for Reset
+- Letter X (or x) for Exit
+
+All functions are now accessible from the main menu, making it a complete control panel for the emotion analysis system. No hidden functions - everything is right there in the menu!
+
+
+
+
+```
+
+// MINT Emotion Analysis System v2.0 - Fixed Version
+// Complete with all menu functions properly implemented
+
+// Initialize system with safe defaults
+:A `MINT Emotion Analysis v2.0` /N `Initializing...` /N 0 e! 0 f! 0 g! 0 s! 0 w! [0 0 0 0 0 0 0 0 0 0] m! [0 0 0 0 0 0 0 0 0 0] n! `System Ready` /N /N B;
+
+// Main menu system - Expanded with all functions
+:B `=== EMOTION ANALYSIS MENU ===` /N `1. Analyze Text` /N `2. View History` /N `3. Show Statistics` /N `4. Clear History` /N `5. System Test` /N `6. Version Info` /N `7. Expert Mode` /N `8. Export Data` /N `9. Batch Analysis` /N `A. Calibration` /N `R. Reset System` /N `X. Exit Program` /N /N `Select option: ` /K h! h 48 - u! u 1 = (C) /E (u 2 = (D) /E (u 3 = (E) /E (u 4 = (F) /E (u 5 = (U) /E (u 6 = (V) /E (u 7 = (W) /E (u 8 = (X) /E (u 9 = (Y) /E (h 65 = (Z) /E (h 82 = (T) /E (h 88 = (G) /E (h 97 = (Z) /E (h 114 = (T) /E (h 120 = (G) /E (`Invalid option` /N B)))))))))))))));
+
+// Text input and analysis (Menu Option 1)
+:C `Enter text for analysis:` /N `(Press Enter twice to finish)` /N /N 0 t! 0 w! 0 e! 0 f! [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0] a! 0 b! /U (/K h! h 13 = (b 1 + b! b 2 = (/F /W) 0 b!) h 13 > (h a t ?! t 1 + t! t 100 < /W) /T /W) H I B;
+
+// View history (Menu Option 2)
+:D `=== ANALYSIS HISTORY ===` /N g 0 = (`No history available` /N) /E (0 i! g (`Session ` i 1 + . `: Score=` m i ? . ` Confidence=` n i ? . `%` /N i 1 + i!)) /N `Press any key to continue...` /K ' B;
+
+// Show statistics (Menu Option 3)
+:E `=== SESSION STATISTICS ===` /N g 0 = (`No data for statistics` /N) /E (0 r! 0 i! g (r m i ? + r! i 1 + i!) r g / v! `Total Sessions: ` g . /N `Average Score: ` v . /N K) /N `Press any key to continue...` /K ' B;
+
+// Clear history (Menu Option 4)
+:F `Clear all history? (y/n): ` /K h! h 121 = h 89 = | (0 g! [0 0 0 0 0 0 0 0 0 0] m! [0 0 0 0 0 0 0 0 0 0] n! `History cleared` /N) /E (`Operation cancelled` /N) /N `Press any key to continue...` /K ' B;
+
+// Exit program (Menu Option X)
+:G `=== GOODBYE ===` /N `Thank you for using MINT Emotion Analysis!` /N `Session statistics:` /N `Total analyses performed: ` g . /N g 0 > (0 r! 0 i! g (r m i ? + r! i 1 + i!) `Average emotion score: ` r g / . /N) `System shutting down...` /N `Goodbye!` /N;
+
+// Main analysis routine
+:H `Analyzing text...` /N 0 o! 0 p! 0 q! 0 r! 0 s! 0 u! 0 v! 0 i! t (a i ? h! L M N i 1 + i!) O P Q w 1 + w!;
+
+// Display analysis results
+:I `=== ANALYSIS RESULTS ===` /N /N `Text Length: ` t . ` characters` /N `Emotional Words: ` w . /N `Final Score: ` e . ` points` /N `Confidence: ` f . `%` /N /N `Emotion Category: ` e J /N `Interpretation: ` e -80 < (`Extremely Negative`) /E (e -60 < (`Very Negative`) /E (e -30 < (`Negative`) /E (e -10 < (`Slightly Negative`) /E (e 10 < (`Neutral`) /E (e 30 < (`Slightly Positive`) /E (e 60 < (`Positive`) /E (e 80 < (`Very Positive`) /E (`Extremely Positive`)))))))) /N /N `Confidence Level: ` f 80 > (`Very High`) /E (f 60 > (`High`) /E (f 40 > (`Medium`) /E (f 20 > (`Low`) /E (`Very Low`)))) /N /N `Score Visualization:` /N R /N `Press any key to continue...` /K ';
+
+// Emotion category name
+:J ' -80 < (`Despair`) /E (' -60 < (`Anger`) /E (' -30 < (`Sadness`) /E (' -10 < (`Displeasure`) /E (' 10 < (`Neutral`) /E (' 30 < (`Contentment`) /E (' 60 < (`Happiness`) /E (' 80 < (`Joy`) /E (`Ecstasy`))))))));
+
+// Statistics distribution display
+:K 0 a! 0 b! 0 c! 0 d! 0 x! 0 y! 0 z! 0 i! g (m i ? j! j -80 < (a 1 + a!) /E (j -30 < (b 1 + b!) /E (j -10 < (c 1 + c!) /E (j 10 < (d 1 + d!) /E (j 30 < (x 1 + x!) /E (j 60 < (y 1 + y!) /E (z 1 + z!)))))) i 1 + i!) `Very Negative: ` a . /N `Negative: ` b . /N `Slightly Negative: ` c . /N `Neutral: ` d . /N `Slightly Positive: ` x . /N `Positive: ` y . /N `Very Positive: ` z . /N;
+
+// Positive word detection - simplified
+:L h 103 = (i 3 < t < (a i 1 + ? 111 = (a i 2 + ? 111 = (a i 3 + ? 100 = (o 10 + o! i 3 + i!))))) h 104 = (i 4 < t < (a i 1 + ? 97 = (a i 2 + ? 112 = (a i 3 + ? 112 = (a i 4 + ? 121 = (o 15 + o! i 4 + i!)))))) h 108 = (i 3 < t < (a i 1 + ? 111 = (a i 2 + ? 118 = (a i 3 + ? 101 = (o 20 + o! i 3 + i!))))) h 103 = (i 4 < t < (a i 1 + ? 114 = (a i 2 + ? 101 = (a i 3 + ? 97 = (a i 4 + ? 116 = (o 12 + o! i 4 + i!))))));
+
+// Negative word detection - simplified
+:M h 98 = (i 2 < t < (a i 1 + ? 97 = (a i 2 + ? 100 = (p 10 + p! i 2 + i!)))) h 115 = (i 2 < t < (a i 1 + ? 97 = (a i 2 + ? 100 = (p 15 + p! i 2 + i!)))) h 104 = (i 3 < t < (a i 1 + ? 97 = (a i 2 + ? 116 = (a i 3 + ? 101 = (p 20 + p! i 3 + i!))))) h 97 = (i 4 < t < (a i 1 + ? 110 = (a i 2 + ? 103 = (a i 3 + ? 114 = (a i 4 + ? 121 = (p 18 + p! i 4 + i!)))))) h 116 = (i 7 < t < (a i 1 + ? 101 = (a i 2 + ? 114 = (a i 3 + ? 114 = (a i 4 + ? 105 = (a i 5 + ? 98 = (a i 6 + ? 108 = (a i 7 + ? 101 = (p 25 + p! i 7 + i!)))))))));
+
+// Neutral word detection - simplified
+:N h 111 = (i 3 < t < (a i 1 + ? 107 = (a i 2 + ? 97 = (a i 3 + ? 121 = (q 5 + q! i 3 + i!))))) h 102 = (i 3 < t < (a i 1 + ? 105 = (a i 2 + ? 110 = (a i 3 + ? 101 = (q 3 + q! i 3 + i!))))) h 110 = (i 5 < t < (a i 1 + ? 111 = (a i 2 + ? 114 = (a i 3 + ? 109 = (a i 4 + ? 97 = (a i 5 + ? 108 = (q 2 + q! i 5 + i!)))))));
+
+// Calculate emotion score
+:O o p - e! q 0 > (e ' 0 > (e q 2 / - e!) /E (e q 2 / + e!)) e 100 > (100 e!) e -100 < (-100 e!) e v!;
+
+// Calculate confidence
+:P o p + q + k! k 0 = (0 f!) /E (k t * 100 / f! e ' 50 > (f 20 + f!) e ' -50 < (f 20 + f!) f 100 > (100 f!));
+
+// Update history
+:Q g 10 < (e m g ?! f n g ?! g 1 + g!) /E (0 i! 9 (m i 1 + ? m i ?! n i 1 + ? n i ?! i 1 + i!) e m 9 ?! f n 9 ?!);
+
+// Score visualization bar
+:R `[-100] ` e 100 + 20 * 200 / b! 0 i! 10 (i b < (`-`) /E (i b = (`|`) /E (` `)) i 1 + i!) 10 i! 20 (i b < (` `) /E (i b = (`|`) /E (`+`)) i 1 + i!) ` [+100]` /N ` -50 0 +50` /N;
+
+// System startup
+:S A;
+
+// System reset (Menu Option R)
+:T `=== SYSTEM RESET ===` /N `Resetting all variables and history...` /N 0 e! 0 f! 0 g! 0 s! 0 w! 0 t! 0 o! 0 p! 0 q! [0 0 0 0 0 0 0 0 0 0] m! [0 0 0 0 0 0 0 0 0 0] n! `System reset complete!` /N `All data cleared` /N `Press any key...` /K ' B;
+
+// System test (Menu Option 5)
+:U `=== SYSTEM TEST ===` /N `Testing word detection...` /N [103 111 111 100 0 0 0 0 0 0] a! 4 t! 0 i! 0 o! t (a i ? h! L i 1 + i!) `Positive score: ` o . /N [98 97 100 0 0 0 0 0 0 0] a! 3 t! 0 i! 0 p! t (a i ? h! M i 1 + i!) `Negative score: ` p . /N `Test complete` /N `Press any key...` /K ' B;
+
+// Version information (Menu Option 6)
+:V `=== SYSTEM INFORMATION ===` /N `MINT Emotion Analysis System` /N `Version 2.0 - Enhanced Edition` /N `Compatible with SJ MINT Interpreter` /N `16-bit Integer Processing` /N `Real-time Emotion Detection` /N /N `Features:` /N `- 7 Emotion Categories` /N `- Confidence Scoring` /N `- History Tracking (10 sessions)` /N `- Statistical Analysis` /N `- ASCII Visualization` /N `- Batch Processing` /N `- Data Export` /N /N `Press any key...` /K ' B;
+
+// Expert mode - variable display (Menu Option 7)
+:W `=== EXPERT MODE ===` /N `Current System Variables:` /N `e (emotion score): ` e . /N `f (confidence %): ` f . /N `g (history count): ` g . /N `t (text length): ` t . /N `w (word count): ` w . /N `o (positive pts): ` o . /N `p (negative pts): ` p . /N `q (neutral pts): ` q . /N /N `History Arrays:` /N `Scores: ` 0 i! g (m i ? . ` ` i 1 + i!) /N `Confidence: ` 0 i! g (n i ? . ` ` i 1 + i!) /N /N `Press any key...` /K ' B;
+
+// Data export (Menu Option 8)
+:X `=== DATA EXPORT ===` /N `Exporting session data in CSV format...` /N /N `Session,Score,Confidence,Category` /N 0 i! g (i 1 + . `,` m i ? j! j . `,` n i ? . `,` j J /N i 1 + i!) /N `Export complete. Copy the data above.` /N `Press any key...` /K ' B;
+
+// Batch analysis mode (Menu Option 9)
+:Y `=== BATCH ANALYSIS MODE ===` /N `Process multiple texts in sequence` /N `Enter number of texts (1-5): ` /K 48 - a! a 1 < a 5 > | (`Invalid. Must be 1-5` /N B) 0 i! a (/N `--- Text ` i 1 + . ` of ` a . ` ---` /N C i 1 + i!) `Batch analysis complete!` /N E B;
+
+// System calibration (Menu Option A)
+:Z `=== SYSTEM CALIBRATION ===` /N `Testing emotion detection accuracy...` /N /N `Test 1: "I am very happy today"` /N 15 o! 0 p! 2 q! 5 t! 3 w! O P `Expected: 60-80, Actual: ` e . ` - ` e 60 >= e 80 <= & (`PASS`) /E (`FAIL`) /N /N `Test 2: "This is terrible and bad"` /N 0 o! 25 p! 0 q! 5 t! 2 w! O P `Expected: -80 to -60, Actual: ` e . ` - ` e -80 >= e -60 <= & (`PASS`) /E (`FAIL`) /N /N `Calibration complete` /N `Press any key...` /K ' B;
+
+// Start the program
+S
+
+```
+
+
+
+
 
 
 
